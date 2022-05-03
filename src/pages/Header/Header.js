@@ -2,33 +2,31 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import CustomLink from '../Hooks/CustomLink/Custom';
 import './Header.css'
 import LogoHeader from './UpHeader/LogoHeader';
 const Header = () => {
     return (
         <div>
             <LogoHeader></LogoHeader>
-            <Navbar className='navigation'>
+            <Navbar className='navigation' expand='lg'>
                 <Container >
-                    <Navbar.Brand as={Link} to="/">Navbar scroll</Navbar.Brand>
+                    <Navbar.Brand className='d-lg-none' as={Link} to="/">Navbar scroll</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
-                        <Nav
-                            className="me-auto my-2 my-lg-0"
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                        >
-                            <Nav.Link as={Link} to='/home'>Home</Nav.Link>
-                            <Nav.Link as={Link} to="/about">About</Nav.Link>
-                            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-                            <Nav.Link as={Link} to="/manageItems">ManageItem</Nav.Link>
-                            <Nav.Link as={Link} to="/addItems">Add Item</Nav.Link>
-                            <Nav.Link as={Link} to="/myItems">My Item</Nav.Link>
-
+                        <Nav className="me-auto my-2 my-lg-0">                                                      
+                       
+                            <Nav.Link className='nav-item text-white' as={Link} to='/home'><CustomLink className='nav-item text-white' to='/home'>Home</CustomLink></Nav.Link>
+                            <Nav.Link className='nav-item text-white' as={Link} to="/about"><CustomLink to='/about'>About</CustomLink></Nav.Link>
+                            <Nav.Link className='nav-item text-white' as={Link} to="/blog"><CustomLink to='/blog'>Blog</CustomLink></Nav.Link>
+                            <Nav.Link className='nav-item text-white' as={Link} to="/manageItems"> <CustomLink to='/manageItems'>ManageItem</CustomLink></Nav.Link>
+                            <Nav.Link className='nav-item text-white' as={Link} to="/addItems"> <CustomLink to='/addItems'>Add Item</CustomLink> </Nav.Link>
+                            <Nav.Link className='nav-item text-white' as={Link} to="/myItems"> <CustomLink to='/myItems'>My Item</CustomLink></Nav.Link>
+                            
                            
                         </Nav>
                         <div className="d-flex">
-                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        <Nav.Link className='nav-item text-white' as={Link} to="/login"> <CustomLink to='/login'>Login</CustomLink></Nav.Link>
                         </div>
                     </Navbar.Collapse>
                 </Container>
