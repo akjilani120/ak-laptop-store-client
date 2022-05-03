@@ -1,0 +1,38 @@
+.expre-img img{
+    width: 100%;
+    height: 350px;
+}
+.years{
+    font-size: 55px;
+    color: #f8a428;
+    font-weight: 500;
+}
+.years-about{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.exper-pera{
+   
+    color: rgb(103, 96, 96);
+    text-align: justify;
+}
+.call{
+text-transform: uppercase;
+font-weight: 600;
+
+}
+.number-btn , .date-btn{
+    border: none;
+    padding: 5px 15px;
+    background-color:#f8a428 ;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+}
+.date-btn{
+background-color: transparent;
+color: rgb(65, 58, 58);
+border: 2px solid #f8a428;
+}
