@@ -7,7 +7,7 @@ function CustomLink({ children, to }) {
     return (
       <div>
         <Link
-          style={{backgroundColor: match ? '#f8a428':"transparent" ,color: match ? "white" : "white", textDecoration: match ? "none" : "none" , height: match ? "50px" : "50px" , width: "120px", padding:"15px 10px" }}
+          style={{backgroundColor: match ? '#f8a428':"transparent" ,color: match ? "white" : "white", textDecoration: match ? "none" : "none" ,  padding:"15px 10px" }}
           to={to}          
         >
           {children}
