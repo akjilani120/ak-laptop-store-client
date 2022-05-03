@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CustomLink from '../Hooks/CustomLink/Custom';
 import './Header.css'
@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div>
             <LogoHeader></LogoHeader>
-            <Navbar className='navigation' expand='lg'>
+            <Navbar sticky="top"  className='navigation' expand='lg'>
                 <Container  className='nav'>
                     <Navbar.Brand className='d-lg-none text-light' as={Link} to="/"> <div className="logo">
                           <h1> <span className='sub-logo'>AK</span> Laptop Store.</h1>
