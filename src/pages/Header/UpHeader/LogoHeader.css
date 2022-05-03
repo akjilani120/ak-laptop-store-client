@@ -1,9 +1,9 @@
 .logo-header{
     background-color: white;
-    height: 100px;   
+    height: 90px;   
     padding: 25px 0px; 
     border-bottom: 1px solid #f8a428;
-    box-shadow: 0px 2px 5px rgb(207, 201, 201);
+    box-shadow: 0px 2px 5px rgb(178, 113, 113);
     border-top: 1px solid #f8a428;
 }
 .logo-main{
@@ -58,4 +58,9 @@
     background-color: transparent;
     border-radius: 5px;
 
+}
+@media screen and (max-width:990px) {
+    .logo-header{
+        display: none;
+    }
 }

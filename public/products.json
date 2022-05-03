@@ -1,0 +1,190 @@
+[
+    {
+        "img" :"https://i.ibb.co/kGcMybn/photo-1604684768394-52a862c2955a.jpg",
+        "brand" :"HP",
+        "name" :"HP UltraBook 9470",
+        "price":"55000",
+        "core":"i5",
+        "Genaration":"11th",
+        "ram": "4 GB",
+        "rom" : "512 GB",
+        "graphice" :"1200",
+        "processor": "Intel 512",
+        "windows" :"10pro",
+        "version" :"11",
+        "weight" :"550GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/bgq1bV1/photo-1565339119519-c9eaa1918b9f.jpg",
+        "brand" :"Dell",
+        "name" :"Dell Latitude 3000",
+        "price":"75000",
+        "core":"i5",
+        "Genaration":"10th",
+        "ram": "8 GB",
+        "rom" : "512 GB",
+        "graphice" :"4200",
+        "processor": "Intel 512",
+        "windows" :"11",
+        "version" :"12",
+        "weight" :"750GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/WcNMHFZ/img.jpg",
+        "brand" :"HP",
+        "name" :"HP pavilion serios 455",
+        "price":"85000",
+        "core":"i9",
+        "Genaration":"11th",
+        "ram": "12 GB",
+        "rom" : "1TR",
+        "graphice" :"4200",
+        "processor": "Intel 1024",
+        "windows" :"11",
+        "version" :"12",
+        "weight" :"650GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/pZXC9YN/HP-15s-du2059tu-Core-i3-10th-Gen-15-6-Inch-Full-HD-Laptop-with-Windows-10-Home-1.jpg",
+        "brand" :"HP",
+        "name" :"HP UltraBook 9470",
+        "price":"55000",
+        "core":"i5",
+        "Genaration":"11th",
+        "ram": "4 GB",
+        "rom" : "512 GB",
+        "graphice" :"1200",
+        "processor": "Intel 512",
+        "windows" :"10pro",
+        "version" :"11",
+        "weight" :"550GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/f2WH2pn/download.jpg",
+        "brand" :"HP",
+        "name" :"HP series book 512",
+        "price":"35000",
+        "core":"i3",
+        "Genaration":"7th",
+        "ram": "4 GB",
+        "rom" : "512 GB",
+        "graphice" :"1200",
+        "processor": "Intel 512",
+        "windows" :"10pro",
+        "version" :"11",
+        "weight" :"550GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/qCtjRby/download-1.jpg",
+        "brand" :"HP",
+        "name" :"HP pavilion 550",
+        "price":"65000",
+        "core":"i5",
+        "Genaration":"8th",
+        "ram": "8 GB",
+        "rom" : "512 GB",
+        "graphice" :"600",
+        "processor": "Intel 512",
+        "windows" :"10pro",
+        "version" :"11",
+        "weight" :"550GM",
+        "gamming" :"low"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/PCWmdwp/dell-g-15-720x720.jpg",
+        "brand" :"HP",
+        "name" :"HP pavilion 720",
+        "price":"95000",
+        "core":"i9",
+        "Genaration":"11",
+        "ram": "16 GB",
+        "rom" : "1TB",
+        "graphice" :"6200",
+        "processor": "Intel 1024",
+        "windows" :"11",
+        "version" :"12",
+        "weight" :"550GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/34ZPZt7/c-KGahs3u9-J6-Wsnm-H3ub-Afn.jpg",
+        "brand" :"Dell",
+        "name" :"Dell Latitude 5000",
+        "price":"75000",
+        "core":"i7",
+        "Genaration":"11th",
+        "ram": "8GB",
+        "rom" : "512 GB",
+        "graphice" :"4200",
+        "processor": "Intel 512",
+        "windows" :"10pro",
+        "version" :"11",
+        "weight" :"650GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/q7PfLF0/c07975934.png",
+        "brand" :"Dell",
+        "name" :"Dell Vostro 3000",
+        "price":"65000",
+        "core":"i7",
+        "Genaration":"10th",
+        "ram": "8GB",
+        "rom" : "512 GB",
+        "graphice" :"4200",
+        "processor": "Intel 1072",
+        "windows" :"11",
+        "version" :"11",
+        "weight" :"670GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/MpP0FPX/05776-NRl-B4w-LKr-RCy5-Wu0-Wm-7-fit-lim-size-1050x.jpg",
+        "brand" :"HP",
+        "name" :"HP pavilion 9500",
+        "price":"95000",
+        "core":"i9",
+        "Genaration":"11th",
+        "ram": "8 GB",
+        "rom" : "512 GB",
+        "graphice" :"6200",
+        "processor": "Intel 820",
+        "windows" :"11",
+        "version" :"11",
+        "weight" :"550GM",
+        "gamming" :"best"        
+        
+    },
+    {
+        "img" :"https://i.ibb.co/JsTL0Gx/photo-1604684768394-52a862c2955a.jpghttps://i.ibb.co/HYrKNws/c-KGahs3u9-J6-Wsnm-H3ub-Afn.jpg",
+        "brand" :"HP",
+        "name" :"HP thimpad 9470",
+        "price":"98000",
+        "core":"i5",
+        "Genaration":"11th",
+        "ram": "12 GB",
+        "rom" : "1TB",
+        "graphice" :"6200",
+        "processor": "Intel 1220",
+        "windows" :"11",
+        "version" :"11",
+        "weight" :"950GM",
+        "gamming" :"best"  
+       
+    }
+    
+]
