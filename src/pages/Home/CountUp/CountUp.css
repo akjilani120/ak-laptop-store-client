@@ -8,4 +8,25 @@
 .count-overflow{
     background-color: rgba(17, 16, 16, 0.384);
     height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.count-number{
+    width: 20%;
+    color: white;
+    font-weight: 800;
+    margin: 10px;
+}
+.count-number h4{
+    font-size: 25px;
+}
+.count-number h4 span{
+    color: #f8a428;
+}
+@media screen and (max-width:768px) {
+    .count-number{
+        width: 40%;
+    }
 }

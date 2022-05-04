@@ -11,6 +11,7 @@ import ManageItems from './pages/ManageItems/ManageItems';
 import MyItems from './pages/MyItems/MyItems';
 import Blog from './pages/Blog/Blog'
 import NotFound from './pages/NotFound/NotFound';
+import Footer from './pages/Shared/Footer/Footer';
 function App() {
   return (
     <div >
@@ -28,6 +29,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

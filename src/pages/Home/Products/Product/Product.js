@@ -9,8 +9,8 @@ const Product = ({product}) => {
         <Card className='main-card' style={{border:"1px solid #f8a428"}}>
           <Card.Img className='card-image' variant="top" src={img} />
           <Card.Body>
-            <Card.Title>Brand Name:{brand}</Card.Title>
-            <Card.Title>Product Name:{name}</Card.Title>
+            <Card.Title>Brand Name : {brand}</Card.Title>
+            <Card.Title>Laptop Name :{name}</Card.Title>
             <Card.Title>Price : $ {price}</Card.Title>
           <Card.Title>Quantity : {quantity}</Card.Title>
           <Card.Title>Subliear Name : {subliarName}</Card.Title>
