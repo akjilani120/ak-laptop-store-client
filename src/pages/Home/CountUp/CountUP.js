@@ -7,7 +7,10 @@ const CountUP = () => {
         <div className='countUp' style={{ 
             backgroundImage: `url(${img})` 
           }}>
+             
            <div className='count-overflow '>
+               <h1 className='count-title text-center text-white pt-5 display-3'>Our Statistics</h1>
+               <div className='count-part'>
                <div className="count-number">
                    <h1><CountUp end={5847} delay={2} /></h1>
                    <h4>Current <span className='count-spa'>Product</span></h4>
@@ -23,6 +26,7 @@ const CountUP = () => {
                <div className="count-number">
                    <h1><CountUp end={98574} delay={2} /></h1>
                    <h4>Device <span className='count-spa'>Service</span></h4>
+               </div>
                </div>
            </div>
         </div>

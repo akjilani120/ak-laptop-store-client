@@ -1,3 +1,4 @@
+
 .card-image{
     height: 200px;
 }
@@ -9,4 +10,10 @@
 }
 .main-card:hover{
    background-color: aliceblue;
+}
+@media screen and (max-width:990px) {
+    .main-card{
+        height: 540px;
+    }
+   
 }

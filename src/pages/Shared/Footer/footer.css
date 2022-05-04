@@ -1,3 +1,28 @@
-.footer .count-overflow{
-    height: 40vh;
+.footer{
+    
+    background-color: rgba(7, 7, 36, 0.905);
+}
+.footer .footer-overflow{
+    
+    color: white;
+    display: flex;    
+    justify-content: center;
+   flex-wrap: wrap;
+}
+.footer-number{
+    width: 30%;
+    padding: 5px 15px;
+}
+.last-footer{
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+}
+@media screen and (max-width:768px) {
+    .footer .footer-overflow{
+        justify-content: start;
+    }
+    .footer  .footer-number{
+        width: 50%;
+    }
+   
 }

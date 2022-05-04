@@ -8,10 +8,14 @@
 .count-overflow{
     background-color: rgba(17, 16, 16, 0.384);
     height: 60vh;
+  
+}
+.count-part{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: 40vh;
 }
 .count-number{
     width: 20%;
@@ -29,4 +33,5 @@
     .count-number{
         width: 40%;
     }
+   
 }

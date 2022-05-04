@@ -15,9 +15,9 @@ const Product = ({product}) => {
           <Card.Title>Quantity : {quantity}</Card.Title>
           <Card.Title>Subliear Name : {subliarName}</Card.Title>
          
-            <Card.Text>Description : {description}             
+            <Card.Text style={{fontSize:'15px'}}>Description : {description}             
             </Card.Text>
-            <button className='btn btn-primary d-block'>Show more</button>
+            <button className='btn btn-warning text-white d-block'>Show more</button>
           </Card.Body>
         </Card>
       </Col>
