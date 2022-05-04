@@ -1,0 +1,11 @@
+.countUp{
+    background-size: cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    background-attachment: fixed;
+}
+.count-overflow{
+    background-color: rgba(17, 16, 16, 0.384);
+    height: 60vh;
+}

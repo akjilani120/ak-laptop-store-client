@@ -2,8 +2,8 @@ import React from 'react';
 import { Container} from 'react-bootstrap';
 import './Experience.css'
 import img from '../../img/experience.jpg'
-import CountUp from 'react-countup';
-import { useCountUp } from 'react-countup';
+
+
 
 const Experience = () => {
     return (
