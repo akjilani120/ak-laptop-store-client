@@ -1,18 +1,23 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import './Product.css'
+import './Product.css';
+
 const Product = ({product}) => {
-    const {img , name} =product;
+    const {img , name, quantity, price,  brand, description, subliarName} =product;
     return (
         <Col>
-        <Card>
+        <Card className='main-card' style={{border:"1px solid #f8a428"}}>
           <Card.Img className='card-image' variant="top" src={img} />
           <Card.Body>
-            <Card.Title>{name}</Card.Title>
-            <Card.Text>
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit longer.
+            <Card.Title>Brand Name:{brand}</Card.Title>
+            <Card.Title>Product Name:{name}</Card.Title>
+            <Card.Title>Price : $ {price}</Card.Title>
+          <Card.Title>Quantity : {quantity}</Card.Title>
+          <Card.Title>Subliear Name : {subliarName}</Card.Title>
+         
+            <Card.Text>Description : {description}             
             </Card.Text>
+            <button className='btn btn-primary d-block'>Show more</button>
           </Card.Body>
         </Card>
       </Col>

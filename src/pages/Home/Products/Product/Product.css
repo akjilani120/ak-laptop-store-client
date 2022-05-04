@@ -3,8 +3,10 @@
 }
 .service-title{
     color: #f8a428;
-    text-transform: uppercase;
+    text-transform: uppercase;   
     
     
-    
+}
+.main-card:hover{
+   background-color: aliceblue;
 }
