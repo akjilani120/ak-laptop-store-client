@@ -1,0 +1,48 @@
+.details-main{
+    background-color: rgb(229, 211, 184);
+}
+.details{
+    position: relative;
+}
+.details-header{
+    background-size: cover;
+    background-position: center;
+    height: 45vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.details-overflow{
+    background-color: rgba(0, 0, 0, 0.596);
+    height: 45vh;
+}
+.details-abs{
+    position: absolute;
+    bottom: -40px;
+    left: 42%;
+   
+
+}
+.details-abs img{
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    
+}
+.list-header{
+    width: 60%;
+}
+@media screen and (max-width:990px) {
+    .list-header{
+        width: 70%;
+    }
+}
+@media screen and (max-width:770px) {
+    .details-abs{
+        bottom: -30px;
+    left: 32%;
+    }
+    .list-header{
+        width: 90%;
+    }
+}

@@ -1,9 +1,14 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({product}) => {
-    const {img , name, quantity, price,  brand, description, subliarName} =product;
+    const {img , name, quantity, price,  brand, description, subliarName, _id} =product;
+    const navigate =useNavigate()
+    const handleUpdate =(id) =>{
+      navigate(`/productDetails/${id}`)
+    }
     return (
         <Col>
         <Card className='main-card' style={{border:"1px solid #f8a428"}}>
@@ -17,7 +22,7 @@ const Product = ({product}) => {
          
             <Card.Text style={{fontSize:'15px'}}>Description : {description}             
             </Card.Text>
-            <button className='btn btn-warning text-white d-block'>Show more</button>
+            <button onClick={() =>handleUpdate(_id)} className='btn btn-warning text-white d-block'>Update</button>
           </Card.Body>
         </Card>
       </Col>
