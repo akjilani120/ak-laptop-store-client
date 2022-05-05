@@ -2,32 +2,37 @@ import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import './signUP.css'
 import auth from '../../../firebase.init';
 const SignUP = () => {
+    const [updateProfile, updating, ] = useUpdateProfile(auth);
     let erro ;
+    const navigate = useNavigate()
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
     if(user){
         navigate('/login')
     }
     if(error){
         erro = error.message.slice(22, 42)
     }
-    const navigate = useNavigate()
+   
     const handleNavi = () => {
-        navigate("/login")
+       
     }
-    const hanldSubmit = (event) => {
+    const hanldSubmit = async (event) => {
         event.preventDefault()
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        createUserWithEmailAndPassword(email, password)
+       await  createUserWithEmailAndPassword(email, password)
+       await updateProfile({name});
+       navigate("/login")
     }
     return (
         <div className='container'>
