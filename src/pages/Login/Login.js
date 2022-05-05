@@ -1,8 +1,10 @@
 import { Form , Button} from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import img from '../img/google.png'
 const Login = () => {
+    const [signInWithGoogle, googleUser, gooleLoading] = useSignInWithGoogle(auth);
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     let erro ;
@@ -13,11 +15,14 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate()
-    if(user){
+    if(user || googleUser){
         navigate(from, { replace: true });
     }
     if(error){
         erro = error.message.slice(22, 36)
+    }
+    const handleGoogle = () =>{
+        signInWithGoogle()
     }
     const handleNavi =() =>{
         navigate("/signup")
@@ -49,6 +54,14 @@ const Login = () => {
                           Login
                         </Button>
                     </Form>
+                </div>
+                <div className='d-flex align-items-center'>
+                <hr className='bg-dark w-50  mx-2 ' /> 
+                <h5>Or</h5>
+                <hr className='bg-dark w-50 mx-2' />
+                </div>
+                <div className='google pb-5 mt-3'>
+                    <button onClick={handleGoogle} className='google-btn'><img src={img} alt="" /> Google sign In </button>
                 </div>
             </div>
 

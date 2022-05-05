@@ -16,3 +16,24 @@
     cursor: pointer;
     font-weight: 600;
 }
+.google img{
+    width: 30px;
+    height: 30;
+}
+hr{
+    height: 10px ;
+    background-color: rgb(12, 12, 64);
+    padding: 3px;
+}
+.google-btn{
+    background-color: rgb(223, 125, 14) ;
+    border: none;
+    width: 50%;
+    text-align: center;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 5px;
+
+}

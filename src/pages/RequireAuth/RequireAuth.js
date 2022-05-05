@@ -11,16 +11,17 @@ function RequireAuth({ children }) {
               <Spinner animation="border" variant="warning" />
         </div>
     }
+    // if(!user.emailVerified){
+    //     return <div>
+    //         <h3 className="text-danger">Your email not verify </h3>
+    //         <h3 className="text-success">Please your email now</h3>
+    //     </div>
+    // }
     if (!user) {
      
       return <Navigate to="/login" state={{ from: location }} replace />;
     }
-    if(!user.emailVerified){
-        return <div>
-            <h3 className="text-danger">Your email not verify </h3>
-            <h3 className="text-success">Please your email now</h3>
-        </div>
-    }
+    
    
     return children;
   }
