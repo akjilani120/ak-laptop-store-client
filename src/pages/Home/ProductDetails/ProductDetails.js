@@ -13,7 +13,15 @@ const ProductDetails = () => {
             .then(data => setProduct(data))
     }, [])
     const handleDeliver = () =>{
-        
+        const updateQuantity = parseInt(product.quantity) - 1
+        const url = `http://localhost:5000/products/${detailId}`
+        fetch(url, {
+            method:"PUT",
+            headers :{
+                "content-type" : "application/json"
+            },
+            body :JSON.stringify(updateQuantity)
+        })
     }
     return (
         <div className='details-main'>
