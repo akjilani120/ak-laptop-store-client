@@ -29,7 +29,7 @@ const Header = () => {
                             <Nav.Link className='nav-item text-white' as={Link} to='/home'><CustomLink className='nav-item text-white' to='/home'>Home</CustomLink></Nav.Link>
                             <Nav.Link className='nav-item text-white' as={Link} to="/about"><CustomLink to='/about'>About</CustomLink></Nav.Link>
                             <Nav.Link className='nav-item text-white' as={Link} to="/blog"><CustomLink to='/blog'>Blog</CustomLink></Nav.Link>
-                            <Nav.Link className='nav-item text-white' as={Link} to="/manageItems"> <CustomLink to='/manageItems'>ManageItem</CustomLink></Nav.Link>
+                           
                             <Nav.Link className='nav-item text-white' as={Link} to="/addItems"> <CustomLink to='/addItems'>Add Item</CustomLink> </Nav.Link>
                             <Nav.Link className='nav-item text-white' as={Link} to="/myItems"> <CustomLink to='/myItems'>My Item</CustomLink></Nav.Link>
 

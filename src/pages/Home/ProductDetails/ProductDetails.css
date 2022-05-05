@@ -24,13 +24,17 @@
 
 }
 .details-abs img{
-    width: 250px;
+    width: 350px;
     height: 250px;
     border-radius: 8px;
     
 }
 .list-header{
     width: 60%;
+}
+.show-btn button{
+    font-size: 18px;
+    font-weight: 600;
 }
 @media screen and (max-width:990px) {
     .list-header{

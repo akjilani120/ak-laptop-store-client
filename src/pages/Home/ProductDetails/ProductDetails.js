@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './ProductDetails.css'
 const ProductDetails = () => {
+    const navigate =useNavigate()
     const { detailId } = useParams()
     const [product, setProduct] = useState({})
     const { img, name, price, quantity, brand ,description, subliarName } = product
@@ -23,6 +24,9 @@ const ProductDetails = () => {
             body :JSON.stringify(updateQuantity)
         })
     }
+    const handleTotal = () =>{
+        navigate('/manageItems')
+    }
     return (
         <div className='details-main'>
             <div className='details'>
@@ -35,6 +39,7 @@ const ProductDetails = () => {
                 
             </div>
             <div className='d-flex justify-content-center mt-4 pb-5 ' >
+               
                   <div className=' list-header mx-lg-0 mx-2'>
                   <ListGroup>
                        
@@ -47,9 +52,11 @@ const ProductDetails = () => {
                        
                         <p className=' d-flex'><button onClick={handleDeliver}  className='btn btn-danger w-50 me-3'>Delivered</button>
                         <button className='btn btn-success w-50 '>Delivered</button></p>
+                        <p className='show-btn'> <button className='btn btn-secondary   p-2 text-white  mb-5 w-100' onClick={handleTotal}>Show more Products</button></p> 
                     </ListGroup>
                  </div> 
              </div>
+            
         </div>
     );
 };

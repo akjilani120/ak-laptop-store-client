@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import UseDataCustom from '../../Hooks/UseDataCustom/UseDataCustom';
 import Product from './Product/Product';
 
 const Products = () => {
-    const [products, setProducts] = useState([])
+    const [products] =UseDataCustom()
     const mainProducts=products.slice(0, 6)
-    useEffect(() => {
-        fetch("http://localhost:5000/products")
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+  
     return (
         <div className='my-5'>
            <Container>
