@@ -1,0 +1,8 @@
+.desciption{
+    width: 100%;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+.desciption:focus{
+    outline: 2px solid skyblue;
+}
