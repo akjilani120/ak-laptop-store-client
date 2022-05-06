@@ -15,6 +15,7 @@ import Footer from './pages/Shared/Footer/Footer';
 import ProductDetails from './pages/Home/ProductDetails/ProductDetails';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
 import AddNewProduct from './pages/ManageItems/addNewItems/AddNewProduct';
+import MyManageItem from './pages/MyManageItems/MyManageItem';
 function App() {
   return (
     <div >
@@ -26,13 +27,24 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUP></SignUP>}></Route>
-        <Route path='/manageItems' element={<ManageItems></ManageItems>}></Route>
-        <Route path='/addItems' element={<AddItems></AddItems>}></Route>
-        <Route path='/myItems' element={<MyItems></MyItems>}></Route>
+        <Route path='/manageItems' element={<RequireAuth>
+          <ManageItems></ManageItems>
+        </RequireAuth>}></Route>
+        <Route path='/addItems' element={<RequireAuth>
+          <AddItems></AddItems>
+        </RequireAuth>}></Route>
+        <Route path='/mymanageitem' element={<RequireAuth>
+          <MyItems></MyItems>
+        </RequireAuth>}></Route>
         <Route path='/productDetails/:detailId' element={<RequireAuth>
           <ProductDetails></ProductDetails>
         </RequireAuth>}></Route>
-        <Route path='/addNewProduct' element={<AddNewProduct></AddNewProduct>}></Route>
+        <Route path='/addNewProduct' element={<RequireAuth>
+          <AddNewProduct></AddNewProduct>
+        </RequireAuth>}></Route>
+        <Route path='/myItems' element={<RequireAuth>
+          <MyManageItem></MyManageItem>
+        </RequireAuth>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
