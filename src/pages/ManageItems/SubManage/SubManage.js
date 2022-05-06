@@ -1,8 +1,11 @@
 import React from 'react';
 import { Card, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import UseDataCustom from '../../Hooks/UseDataCustom/UseDataCustom';
 
-const SubManage = ({ product }) => {
-    const { img, name, quantity, price, brand, description, subliarName } = product;
+const SubManage = ({ product , handleDelete }) => {
+    
+    const { img, name, quantity, price, brand, description, subliarName, _id } = product;
+    
     return (
         <Col>
             <Card >
@@ -21,7 +24,7 @@ const SubManage = ({ product }) => {
                     <ListGroupItem> <b>subliarName : </b> {subliarName}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                   <button className='btn btn-danger'>Delete</button>
+                   <button onClick={() =>handleDelete(_id)} className='btn btn-danger'>Delete</button>
                 </Card.Body>
             </Card>
         </Col>

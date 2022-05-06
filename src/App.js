@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Footer from './pages/Shared/Footer/Footer';
 import ProductDetails from './pages/Home/ProductDetails/ProductDetails';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
+import AddNewProduct from './pages/ManageItems/addNewItems/AddNewProduct';
 function App() {
   return (
     <div >
@@ -31,6 +32,7 @@ function App() {
         <Route path='/productDetails/:detailId' element={<RequireAuth>
           <ProductDetails></ProductDetails>
         </RequireAuth>}></Route>
+        <Route path='/addNewProduct' element={<AddNewProduct></AddNewProduct>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>

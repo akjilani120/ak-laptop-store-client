@@ -6,16 +6,16 @@ const ProductDetails = () => {
     const navigate =useNavigate()
     const { detailId } = useParams()
     const [product, setProduct] = useState({})
-    const { img, name, price, quantity, brand ,description, subliarName } = product
+    const { img, name, price, quantity, brand ,description, subliarName, _id } = product
     useEffect(() => {
         const url = `http://localhost:5000/products/${detailId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
-    const handleDeliver = () =>{
+    const handleDeliver = (id) =>{
         const updateQuantity = parseInt(product.quantity) - 1
-        const url = `http://localhost:5000/products/${detailId}`
+        const url = `http://localhost:5000/products/${id}`
         fetch(url, {
             method:"PUT",
             headers :{
@@ -50,9 +50,9 @@ const ProductDetails = () => {
                         <ListGroup.Item className='p-2'>Description : {description}</ListGroup.Item>
                         <ListGroup.Item className='p-2'>Subliar Name : {subliarName}</ListGroup.Item>
                        
-                        <p className=' d-flex'><button onClick={handleDeliver}  className='btn btn-danger w-50 me-3'>Delivered</button>
+                        <p className=' d-flex'><button onClick={() => handleDeliver( _id)}  className='btn btn-danger w-50 me-3'>Delivered</button>
                         <button className='btn btn-success w-50 '>Delivered</button></p>
-                        <p className='show-btn'> <button className='btn btn-secondary   p-2 text-white  mb-5 w-100' onClick={handleTotal}>Show more Products</button></p> 
+                        <p className='show-btn'> <button className='btn btn-warning   p-2 text-white  mb-5 w-100' onClick={handleTotal}>Show more Products</button></p> 
                     </ListGroup>
                  </div> 
              </div>
