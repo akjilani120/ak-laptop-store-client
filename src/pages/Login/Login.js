@@ -1,9 +1,13 @@
 import { Form , Button} from 'react-bootstrap';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import img from '../img/google.png'
+import 'react-toastify/dist/ReactToastify.css';
+import { useRef } from 'react';
 const Login = () => {
+   
     const [signInWithGoogle, googleUser, gooleLoading] = useSignInWithGoogle(auth);
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -14,6 +18,9 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+      );
     const navigate = useNavigate()
     if(user || googleUser){
         navigate(from, { replace: true });
@@ -27,11 +34,18 @@ const Login = () => {
     const handleNavi =() =>{
         navigate("/signup")
     }
-    const hanldSubmit =(event) =>{
+    const hanldSubmit = async(event) =>{
         event.preventDefault()        
         const email = event.target.email.value;
         const password = event.target.password.value;
-        signInWithEmailAndPassword(email, password)   
+        signInWithEmailAndPassword(email, password)  
+       
+    }
+    const emailRef =useRef('')
+    const handleReset = async() =>{
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        toast('Sent email'); 
     }
     return (
         <div className='container'>
@@ -41,7 +55,7 @@ const Login = () => {
                     <Form onSubmit={hanldSubmit}>                      
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder=" email" name='email' />                            
+                            <Form.Control type="email" ref={emailRef}  placeholder=" email" name='email' />                            
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -50,7 +64,8 @@ const Login = () => {
                         </Form.Group>
                         <p className='text-primary'>If you have not an account ? <span className='navi' onClick={ handleNavi}> Signup  </span></p>
                         <p className='text-danger'>{erro}</p>
-                        <Button variant="primary" type="submit">
+                        <p className='text-primary'>Forget password ? <span className='navi' onClick={handleReset}> Reset password  </span></p>
+                        <Button variant="warning" type="submit">
                           Login
                         </Button>
                     </Form>
@@ -64,7 +79,7 @@ const Login = () => {
                     <button onClick={handleGoogle} className='google-btn'><img src={img} alt="" /> Google sign In </button>
                 </div>
             </div>
-
+            <ToastContainer />
         </div>
     );
 };

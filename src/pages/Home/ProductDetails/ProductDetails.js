@@ -1,28 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, Form, Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import './ProductDetails.css'
 const ProductDetails = () => {
     const navigate =useNavigate()
     const { detailId } = useParams()
     const [product, setProduct] = useState({})
-    const { img, name, price, quantity, brand ,description, subliarName, _id } = product
+    const { img, name, price, quantity, brand ,description, subliarName } = product
     useEffect(() => {
         const url = `http://localhost:5000/products/${detailId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
-    const handleDeliver = (id) =>{
-        const updateQuantity = parseInt(product.quantity) - 1
-        const url = `http://localhost:5000/products/${id}`
+    const handleDeliver = () =>{
+        const updateQua = parseInt(product.quantity)
+        const updateQuantity = updateQua - 1
+        const mainQuantity = {updateQuantity}      
+        const url = `http://localhost:5000/products/${detailId}`
         fetch(url, {
             method:"PUT",
-            headers :{
+            headers:{
                 "content-type" : "application/json"
             },
-            body :JSON.stringify(updateQuantity)
+            body : JSON.stringify(mainQuantity)
         })
+        
+        
+        
+    }
+    const handleQuantity = (event) =>{
+        event.preventDefault()
+        const inputQuantity = event.target.quantity.value;
+        const addQuantity =parseInt(product.quantity) + parseInt(inputQuantity)
+        const quantity ={addQuantity}
+        const url = `http://localhost:5000/products/${detailId}`
+        fetch(url, {
+            method:"PUT",
+            headers:{
+                "content-type" : "application/json"
+            },
+            body : JSON.stringify(quantity)
+        })
+        
     }
     const handleTotal = () =>{
         navigate('/manageItems')
@@ -50,9 +70,20 @@ const ProductDetails = () => {
                         <ListGroup.Item className='p-2'>Description : {description}</ListGroup.Item>
                         <ListGroup.Item className='p-2'>Subliar Name : {subliarName}</ListGroup.Item>
                        
-                        <p className=' d-flex'><button onClick={() => handleDeliver( _id)}  className='btn btn-danger w-50 me-3'>Delivered</button>
-                        <button className='btn btn-success w-50 '>Delivered</button></p>
-                        <p className='show-btn'> <button className='btn btn-warning   p-2 text-white  mb-5 w-100' onClick={handleTotal}>Show more Products</button></p> 
+                        <p className=''><button style={{height:"40px"}} onClick={ handleDeliver}  className=' btn btn-danger  me-3 my-2'>Delivered</button>                      
+                        <Form onSubmit={handleQuantity}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label ><b>Add Quantity</b></Form.Label>
+                            <Form.Control type="text"   name='quantity' />                            
+                        </Form.Group>
+                        <Button className='text-white' variant="warning" type="submit">
+                          Submit
+                        </Button>
+                        </Form>
+                        <hr />
+                        </p>
+                       
+                        <p className='show-btn'> <button  className='btn btn-warning   p-2 text-white  mb-5 w-100' onClick={handleTotal}>Show more Products</button></p> 
                     </ListGroup>
                  </div> 
              </div>
