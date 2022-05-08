@@ -9,8 +9,12 @@ const MyManageItem = () => {
     const [myItems,setMyItems]=useState([])
     useEffect(()=>{
         const email= user.email;
-        const url= `http://localhost:5000/myproducts?email=${email}`
-        fetch(url)
+        const url= `https://secure-hollows-88754.herokuapp.com/myproducts?email=${email}`
+        fetch(url, {
+            headers:{
+                authorization:`Bearer ${localStorage.getItem("accessToken")}`
+            }
+        })
         .then(res => res.json())
         .then(data => setMyItems(data))
 
@@ -18,13 +22,13 @@ const MyManageItem = () => {
     const handleDelete = (id) => {
         const permision = window.confirm("Are your delete item")
         if (permision) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://secure-hollows-88754.herokuapp.com/products/${id}`
             fetch(url, {
                 method: "DELETE"
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                   
                     const remaing = myItems.filter(pro => pro._id !== id)
                     setMyItems(remaing)
                 })

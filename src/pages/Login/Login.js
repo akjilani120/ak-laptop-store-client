@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import img from '../img/google.png'
 import 'react-toastify/dist/ReactToastify.css';
 import { useRef } from 'react';
+import axios from 'axios';
 
 const Login = () => {
     const emailRef =useRef('')  
@@ -28,10 +29,10 @@ const Login = () => {
     if(user || googleUser){
         const email = emailRef.current.value;
         const addedToken ={email}
-           fetch("http://localhost:5000/login", {
+           fetch("https://secure-hollows-88754.herokuapp.com/login", {
            method:"POST",
            headers:{
-            "content-type" :"application/json"
+            "content-type" :"application/json",           
         },
         body : JSON.stringify(addedToken)
        })
@@ -51,14 +52,14 @@ const Login = () => {
     const handleNavi =() =>{
         navigate("/signup")
     }
-    const hanldSubmit = async(event) =>{
+    const hanldSubmit = (event) =>{
         event.preventDefault()        
         const email = event.target.email.value;
         const password = event.target.password.value;
         
        signInWithEmailAndPassword(email, password)  
-    
        
+
        
     }
     

@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const [isReload , setIsReload] =useState(false)
     const { img, name, price, quantity, brand ,description, subliarName } = product
     useEffect(() => {
-        const url = `http://localhost:5000/products/${detailId}`
+        const url = `https://secure-hollows-88754.herokuapp.com/products/${detailId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -19,7 +19,7 @@ const ProductDetails = () => {
         const {quantity,_id,...rest}=product;
         const updateQuantity= parseInt(quantity)-1;
         const updatePd={quantity:updateQuantity,...rest };   
-        const url = `http://localhost:5000/products/${detailId}`
+        const url = `https://secure-hollows-88754.herokuapp.com/products/${detailId}`
         fetch(url, {
             method:"PUT",
             headers:{
@@ -38,7 +38,7 @@ const ProductDetails = () => {
         const {quantity,_id,...rest}=product;
         const updateQuantity= parseInt(quantity)+ parseInt(newStock);
         const updatePd={quantity:updateQuantity,...rest };   
-        const url = `http://localhost:5000/products/${detailId}`
+        const url = `https://secure-hollows-88754.herokuapp.com/products/${detailId}`
         fetch(url, {
             method:"PUT",
             headers:{

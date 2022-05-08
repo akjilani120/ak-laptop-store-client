@@ -10,13 +10,13 @@ const ManageItems = () => {
     const handleDelete = (id) => {
         const permision = window.confirm("Are your delete item")
         if (permision) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://secure-hollows-88754.herokuapp.com/products/${id}`
             fetch(url, {
                 method: "DELETE"
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                  
                     const remaing = products.filter(pro => pro._id !== id)
                     setProducts(remaing)
                 })

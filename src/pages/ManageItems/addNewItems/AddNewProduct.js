@@ -6,7 +6,7 @@ import './AddNewProduct.css'
 
 const AddNewProduct = () => {
     const [user] = useAuthState(auth)
-    console.log(user)
+   
 
     const hanldSubmit = async (event) => {
         event.preventDefault()
@@ -19,7 +19,7 @@ const AddNewProduct = () => {
         const subliarName = event.target.subliarName.value;
         const img = event.target.img.value;
         const addNewProduct= { name, email, brand , quantity, price , description, subliarName, img }
-        const url =`http://localhost:5000/products`
+        const url =` https://secure-hollows-88754.herokuapp.com/products`
         fetch(url, {
             method:"POST",
             headers:{
@@ -28,8 +28,7 @@ const AddNewProduct = () => {
             body : JSON.stringify(addNewProduct)
         })
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
+        .then(data => {          
         })
       
     }
