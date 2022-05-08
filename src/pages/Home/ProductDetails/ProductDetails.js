@@ -6,42 +6,48 @@ const ProductDetails = () => {
     const navigate =useNavigate()
     const { detailId } = useParams()
     const [product, setProduct] = useState({})
+    const [isReload , setIsReload] =useState(false)
     const { img, name, price, quantity, brand ,description, subliarName } = product
     useEffect(() => {
         const url = `http://localhost:5000/products/${detailId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    }, [isReload])
+
     const handleDeliver = () =>{
-        const updateQua = parseInt(product.quantity)
-        const updateQuantity = updateQua - 1
-        const mainQuantity = {updateQuantity}      
+        const {quantity,_id,...rest}=product;
+        const updateQuantity= parseInt(quantity)-1;
+        const updatePd={quantity:updateQuantity,...rest };   
         const url = `http://localhost:5000/products/${detailId}`
         fetch(url, {
             method:"PUT",
             headers:{
                 "content-type" : "application/json"
             },
-            body : JSON.stringify(mainQuantity)
+            body : JSON.stringify(updatePd)
         })
-        
-        
+        .then(res=>res.json())
+        .then(data=>setIsReload(!isReload))  
         
     }
+
     const handleQuantity = (event) =>{
         event.preventDefault()
-        const inputQuantity = event.target.quantity.value;
-        const addQuantity =parseInt(product.quantity) + parseInt(inputQuantity)
-        const quantity ={addQuantity}
+        const newStock= event.target.quantity.value;
+        const {quantity,_id,...rest}=product;
+        const updateQuantity= parseInt(quantity)+ parseInt(newStock);
+        const updatePd={quantity:updateQuantity,...rest };   
         const url = `http://localhost:5000/products/${detailId}`
         fetch(url, {
             method:"PUT",
             headers:{
                 "content-type" : "application/json"
             },
-            body : JSON.stringify(quantity)
+            body : JSON.stringify(updatePd)
         })
+        .then(res=>res.json())
+        .then(data=>setIsReload(!isReload)) 
         
     }
     const handleTotal = () =>{

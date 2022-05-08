@@ -6,7 +6,9 @@ import auth from '../../firebase.init';
 import img from '../img/google.png'
 import 'react-toastify/dist/ReactToastify.css';
 import { useRef } from 'react';
+
 const Login = () => {
+    const emailRef =useRef('')  
    
     const [signInWithGoogle, googleUser, gooleLoading] = useSignInWithGoogle(auth);
     let location = useLocation();
@@ -18,11 +20,26 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+    
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
         auth
       );
     const navigate = useNavigate()
     if(user || googleUser){
+        const email = emailRef.current.value;
+        const addedToken ={email}
+           fetch("http://localhost:5000/login", {
+           method:"POST",
+           headers:{
+            "content-type" :"application/json"
+        },
+        body : JSON.stringify(addedToken)
+       })
+       .then(res => res.json())
+       .then(data =>{
+       localStorage.setItem("accessToken", data.token)
+       })
+       
         navigate(from, { replace: true });
     }
     if(error){
@@ -38,10 +55,13 @@ const Login = () => {
         event.preventDefault()        
         const email = event.target.email.value;
         const password = event.target.password.value;
-        signInWithEmailAndPassword(email, password)  
+        
+       signInWithEmailAndPassword(email, password)  
+    
+       
        
     }
-    const emailRef =useRef('')
+    
     const handleReset = async() =>{
         const email = emailRef.current.value;
         await sendPasswordResetEmail(email);
