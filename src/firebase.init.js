@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: 'ak-laptop-store-main',
   storageBucket: 'ak-laptop-store-main.appspot.com',
   messagingSenderId: '768563422629',
-  appId: '1:768563422629:web:d26f26394e4ee0a3a2f44c'
+  appId: '1:768563422629:web:d26f26394e4ee0a3a2f44c',
 };
 
 // Initialize Firebase
